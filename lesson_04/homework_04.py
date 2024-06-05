@@ -97,6 +97,6 @@ for sentenсe in adwentures_of_tom_sawer_sentences:
 # task 10
 """ Виведіть кількість слів останнього речення з adwentures_of_tom_sawer_sentences.
 """
-print("#### task 09", "\n")
-result = len(adwentures_of_tom_sawer_sentences[-1].split())
+print("#### task 10", "\n")
+result = len(adwentures_of_tom_sawer_sentences[-2].split())
 print("Number of words in the last sentence is: ", result)
