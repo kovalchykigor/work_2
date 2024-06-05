@@ -24,29 +24,30 @@ rolling in wealth."""
 """ Дані у строці adwentures_of_tom_sawer розбиті випадковим чином, через помилку.
 треба замінити кінець абзацу на пробіл .replace("\n", " ")"""
 print("#### task 01", "\n")
-result_01 = adwentures_of_tom_sawer.replace("\n", " ")
-print(result_01, "\n")
+adwentures_of_tom_sawer = adwentures_of_tom_sawer.replace("\n", " ")
+print(adwentures_of_tom_sawer, "\n")
 
 # task 02 ==
 """ Замініть .... на пробіл
 """
 print("#### task 02", "\n")
-result_02 = result_01.replace("....", "")
-print(result_02, "\n")
+adwentures_of_tom_sawer = adwentures_of_tom_sawer.replace("....", "")
+print(adwentures_of_tom_sawer, "\n")
 
 # task 03 ==
 """ Зробіть так, щоб у тексті було не більше одного пробілу між словами.
 """
 print("#### task 03", "\n")
-split_to_list = result_02.split()
-result_03 = ' '.join(split_to_list)
-print(result_03, "\n")
+adwentures_of_tom_sawer = adwentures_of_tom_sawer.split()
+split_to_list = adwentures_of_tom_sawer # для слідуючих завдань
+adwentures_of_tom_sawer = ' '.join(split_to_list)
+print(adwentures_of_tom_sawer, "\n")
 
 # task 04
 """ Виведіть, скількі разів у тексті зустрічається літера "h"
 """
 print("#### task 04", "\n")
-result_04 = result_03.count('h')
+result_04 = adwentures_of_tom_sawer.count('h')
 print("The letter 'h' is found in the text ", result_04, " times", "\n")
 
 
@@ -64,8 +65,8 @@ print("Count of words that starts with upper case is: ", count, "\n")
 """ Виведіть позицію, на якій слово Tom зустрічається вдруге
 """
 print("#### task 06", "\n")
-first_find = result_03.find("Tom")
-second_find = result_03.find("Tom", first_find + 1)
+first_find = adwentures_of_tom_sawer.find("Tom")
+second_find = adwentures_of_tom_sawer.find("Tom", first_find + 1)
 print("The index of second find of 'Tom' is: ", second_find, "\n")
 
 
@@ -74,7 +75,7 @@ print("The index of second find of 'Tom' is: ", second_find, "\n")
 Збережіть результат у змінній adwentures_of_tom_sawer_sentences
 """
 print("#### task 07", "\n")
-adwentures_of_tom_sawer_sentences = result_03.split(".")
+adwentures_of_tom_sawer_sentences = adwentures_of_tom_sawer.split(".")
 print(adwentures_of_tom_sawer_sentences, "\n")
 
 
@@ -83,7 +84,7 @@ print(adwentures_of_tom_sawer_sentences, "\n")
 Перетворіть рядок у нижній регістр.
 """
 print("#### task 08", "\n")
-print(adwentures_of_tom_sawer_sentences[4].lower(), "\n")
+print(adwentures_of_tom_sawer_sentences[3].lower(), "\n")
 
 # task 09
 """ Перевірте чи починається якесь речення з "By the time".
@@ -97,5 +98,5 @@ for sentenсe in adwentures_of_tom_sawer_sentences:
 """ Виведіть кількість слів останнього речення з adwentures_of_tom_sawer_sentences.
 """
 print("#### task 09", "\n")
-result = len(adwentures_of_tom_sawer_sentences[4].split())
+result = len(adwentures_of_tom_sawer_sentences[-1].split())
 print("Number of words in the last sentence is: ", result)
