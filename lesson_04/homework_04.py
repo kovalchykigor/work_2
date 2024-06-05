@@ -90,8 +90,8 @@ print(adwentures_of_tom_sawer_sentences[3].lower(), "\n")
 """ Перевірте чи починається якесь речення з "By the time".
 """
 print("#### task 09", "\n")
-for sentenсe in adwentures_of_tom_sawer_sentences:
-    if sentenсe.startswith(" By the time"):
+for sentence in adwentures_of_tom_sawer_sentences:
+    if sentence.startswith(" By the time"):
         print("The following sentenсe starts with 'By the time' fraze: ", "\n", sentenсe, "\n")
 
 # task 10
