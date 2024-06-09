@@ -1,6 +1,5 @@
-print("\n", "Please input random sequence of chars:")
-random_input = input()
-if len(random_input) > 10:
-    print("True")
-else:
-    print("False")
+
+user_chars = input("Please input random sequence of chars:\n")
+unic_chars = set(user_chars)
+
+print(len(unic_chars))
