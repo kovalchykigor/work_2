@@ -92,7 +92,7 @@ print(adwentures_of_tom_sawer_sentences[3].lower(), "\n")
 print("#### task 09", "\n")
 for sentence in adwentures_of_tom_sawer_sentences:
     if sentence.startswith(" By the time"):
-        print("The following sentenсe starts with 'By the time' fraze: ", "\n", sentenсe, "\n")
+        print("The following sentenсe starts with 'By the time' fraze: ", "\n", sentence, "\n")
 
 # task 10
 """ Виведіть кількість слів останнього речення з adwentures_of_tom_sawer_sentences.
