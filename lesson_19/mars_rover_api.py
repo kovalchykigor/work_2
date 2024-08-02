@@ -5,9 +5,6 @@ sol = 1000
 camera = "fhaz"
 url = f"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol={sol}&api_key={api_key}&camera={camera}"
 
-response = requests.get(url)
-data = response.json()
-
 
 def get_image_urls(data):
     image_urls = []
@@ -26,6 +23,8 @@ def download_images(image_urls):
         count += 1
 
 
+response = requests.get(url)
+data = response.json()
 
 urls_list = get_image_urls(data)
 download_images(urls_list)
