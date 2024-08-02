@@ -4,29 +4,31 @@ from decorators import log_decorator, error_decorator_for_generator, error_decor
 @log_decorator
 @error_decorator_for_iterator
 def return_reversed_list_iterator(my_list: list):
-    x = 10 / 0  # ZerroDivisionError
-    my_iterable = iter(reversed(my_list))
-    temp_list = []
-    for element in my_iterable:
-        temp_list.append(element)
-    return temp_list
+    #x = 10 / 0  # ZerroDivisionError
+    return iter(reversed(my_list))
 
 my_list = [1, 2, 3, 4, 5]
-return_reversed_list_iterator(my_list)
+temp_list = []
+for element in return_reversed_list_iterator(my_list):
+    temp_list.append(element)
+print(temp_list, "\n", "-"*80)
 
 
 @log_decorator
 @error_decorator_for_iterator
 def return_even_from_zero_to_n_iterator(n:int):
-    x = 10 / 0  # ZerroDivisionError
-    my_iter = iter(range(n+1))
-    lst = []
-    for element in my_iter:
-        if element % 2 == 0 and element != 0:
-            lst.append(element)
-    return lst
+    #x = 10 / 0  # ZerroDivisionError
+    return iter(range(n+1))
 
-return_even_from_zero_to_n_iterator(22)
+result = return_even_from_zero_to_n_iterator(30)
+if isinstance(result, str):
+    print(result, "\n", "-"*80)
+else:
+    lst = []
+    for element in result:
+        lst.append(element)
+    print(lst, "\n", "-"*80)
+
 
 
 @error_decorator_for_generator
@@ -38,8 +40,10 @@ def return_even_from_zero_to_n_generator(n:int):
         yield count
         count += 2
 
+lst_from_zeor_to_n = []
 for element in return_even_from_zero_to_n_generator(100):
-    print(element)
+    lst_from_zeor_to_n.append(element)
+print(lst_from_zeor_to_n, "\n", "-"*80)
 
 
 @error_decorator_for_generator
@@ -54,4 +58,5 @@ def fibonacci_generator(n:int):
 result2 = []
 for element in fibonacci_generator(15):
     result2.append(element)
-    print(result2)
+
+print(result2, "\n", "-"*80)
