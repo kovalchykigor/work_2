@@ -21,6 +21,7 @@ class LocalServerRequests(BaseRequest):
 
     def get_fiel_name_from_response(self, response):
         resp = response.json()
+        print(resp)
         return resp.get('image_url').split("/")[-1]
 
     def post_method(self):
@@ -29,10 +30,10 @@ class LocalServerRequests(BaseRequest):
         print(f"method POST status code is: {response.status_code}")
         return response
 
-    def get_method(self):
-        headers = {'User-Agent': 'MyAgent', 'Content-Type': 'image'}
-        response = BaseRequest.base_request(self, url=f"{self.url}{self.get_endpoint}", method=self.get,
-                                            headers=headers)
+    def get_method(self):   ### IF 'Content-Type': 'text' then status code is 200; IF 'Content-Type': 'image' then status code is 404
+        headers = {'User-Agent': 'MyAgent', 'Content-Type': 'text'}
+        response = BaseRequest.base_request(self, url=f"{self.url}{self.get_endpoint}", method=self.get, headers=headers)
+
         with open(self.local_file_url_write, 'wb') as f:
             f.write(response.content)
         print(f"method GET status code is: {response.status_code}")
@@ -49,6 +50,7 @@ post_response = local_server_request.post_method()
 local_server_request.get_method()
 
 file_name = local_server_request.get_fiel_name_from_response(post_response)
+#print(file_name)
 delete_response = local_server_request.delete_method(file_name)
 
 
