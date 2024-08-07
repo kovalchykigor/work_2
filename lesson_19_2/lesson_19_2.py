@@ -10,10 +10,8 @@ class BaseRequest:
 class LocalServerRequests(BaseRequest):
     def __init__(self):
         self.url = "http://127.0.0.1:8080/"
-
         self.get = "get"
         self.get_endpoint = "image/mars_photo1.jpg"
-
         self.post = "post"
         self.post_endpoint = "upload"
         self.delete = "delete"
@@ -21,11 +19,9 @@ class LocalServerRequests(BaseRequest):
         self.local_file_url = "D:\mars_photo1.jpg"
         self.local_file_url_write = "D:\mars_photo1_downloaded.jpg"
 
-
     def get_fiel_name_from_response(self, response):
         resp = response.json()
         return resp.get('image_url').split("/")[-1]
-
 
     def post_method(self):
         file = {'image': open(self.local_file_url, 'rb')}
@@ -34,11 +30,11 @@ class LocalServerRequests(BaseRequest):
         return response
 
     def get_method(self):
-
-        headers = {'User-Agent': 'MyAgent', 'Content-Type': 'text'}
-
-        response = BaseRequest.base_request(self, url=f"{self.url}{self.get_endpoint}", method=self.get, headers=headers)
-        file = {'image': open(self.local_file_url_write, 'wb')}
+        headers = {'User-Agent': 'MyAgent', 'Content-Type': 'image'}
+        response = BaseRequest.base_request(self, url=f"{self.url}{self.get_endpoint}", method=self.get,
+                                            headers=headers)
+        with open(self.local_file_url_write, 'wb') as f:
+            f.write(response.content)
         print(f"method GET status code is: {response.status_code}")
 
     def delete_method(self, file_name):
