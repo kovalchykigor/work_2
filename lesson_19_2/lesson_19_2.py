@@ -30,8 +30,8 @@ class LocalServerRequests(BaseRequest):
         print(f"method POST status code is: {response.status_code}")
         return response
 
-    def get_method(self):   ### IF 'Content-Type': 'text' then status code is 200; IF 'Content-Type': 'image' then status code is 404
-        headers = {'User-Agent': 'MyAgent', 'Content-Type': 'text'}
+    def get_method(self):
+        headers = {'User-Agent': 'MyAgent', 'Content-Type': 'image'}
         response = BaseRequest.base_request(self, url=f"{self.url}{self.get_endpoint}", method=self.get, headers=headers)
 
         with open(self.local_file_url_write, 'wb') as f:
