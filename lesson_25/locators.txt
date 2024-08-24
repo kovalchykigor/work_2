@@ -1,0 +1,56 @@
+//header[@class='header bg-basic-dark']
+//header
+/html
+/html/head
+/html/body//a
+/html/body//button
+//div[@class='container']
+//div
+//a[text()='Home']
+//a
+//button[text()='About']
+//button[text()='Contacts']
+//button
+//*[@_ngcontent-qhm-c64]
+//*[@_ngcontent-qhm-c64 and @class='container']
+//*[@_ngcontent-qhm-c64 and @class='row']
+//*
+//div/app-home
+//div//section
+//div//
+//app-guest-layout
+//div[@_ngcontent-qhm-c63]//h1
+//div[@_ngcontent-qhm-c63]//p
+//div[@_ngcontent-qhm-c63 or @class='hero-video']
+//div[@_ngcontent-qhm-c64 and @class='hero-video']
+//div[@_ngcontent-qhm-c60]//div[@class='col-12 col-lg-8']
+
+
+
+#
+*
+#aboutSection
+#contactsSection
+.container
+html > body > #wt-sky-root
+div.section
+div.section.contacts
+.contacts
+.section.contacts
+a
+button
+header
+h1
+p
+div
+[id="aboutSection"]
+header.bg-basic-dark
+button.header-link
+button.btn.header-link
+a[target="_blank"]
+[target="_blank"]
+[target="_blank"][rel="nofollow"]
+.socials_link[target="_blank"][rel="nofollow"]
+[target="_blank"][href="https://ithillel.ua"]
+[href="https://ithillel.ua"]
+div:first-child
