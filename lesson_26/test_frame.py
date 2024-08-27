@@ -33,6 +33,7 @@ class TestFrame:
 
         alert = Alert(driver)
         alert_message = alert.text
+        alert.accept()
 
         assertion = Assertion()
         assertion.assert_expected_message(alert_message, expected_message)
