@@ -3,7 +3,7 @@ FROM python:3.11.9
 WORKDIR /app
 
 # copy from work dir to container
-COPY . /app
+COPY .. /app
 
 RUN pip install -r requirements.txt
 
