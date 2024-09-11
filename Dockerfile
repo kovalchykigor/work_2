@@ -8,3 +8,4 @@ COPY . /app
 RUN pip install -r requirements.txt
 
 CMD ["pytest", "--maxfail=1", "--disable-warnings", "--tb=short"]
+
