@@ -1,11 +1,14 @@
-FROM python:3.11.9
+# Use an official Python runtime as a parent image
+FROM python:3.10.12
 
+# Set the working directory
 WORKDIR /app
 
-# copy from work dir to container
-COPY .. /app
+# Copy the current directory contents into the container
+COPY . .
 
+# Install any needed packages specified in requirements.txt
 RUN pip install -r requirements.txt
 
-CMD ["pytest", "--maxfail=1", "--disable-warnings", "--tb=short"]
-
+# Run the app when the container launches
+CMD ["pytest", "test_app.py"]
