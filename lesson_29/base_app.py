@@ -1,10 +1,11 @@
-# conn = psycopg2.connect("postgresql://postgres:postgres@localhost:5432/postgres")
+import os
 
 import psycopg2
 
 
 def connect_to_db():
-    conn = psycopg2.connect("postgresql://postgres:postgres@localhost:5432/postgres")
+    conn = psycopg2.connect(os.getenv('DATABASE_URL'))
+    # conn = psycopg2.connect("postgresql://postgres:postgres@localhost:5432/postgres")
     return conn
 
 
