@@ -1,14 +1,16 @@
 import os
-
+import allure
 import psycopg2
 
 
+@allure.step("Run 'connect_to_db' method")
 def connect_to_db():
-    conn = psycopg2.connect(os.getenv('DATABASE_URL'))
-    # conn = psycopg2.connect("postgresql://postgres:postgres@localhost:5432/postgres")
+    # conn = psycopg2.connect(os.getenv('DATABASE_URL'))
+    conn = psycopg2.connect("postgresql://postgres:postgres@localhost:5432/postgres")
     return conn
 
 
+@allure.step("Run 'create_table' method")
 def create_table():
     conn = connect_to_db()
     cursor = conn.cursor()
@@ -24,6 +26,7 @@ def create_table():
     conn.close()
 
 
+@allure.step("Run 'insert_user' method")
 def insert_user(name, age):
     conn = connect_to_db()
     cursor = conn.cursor()
@@ -33,6 +36,7 @@ def insert_user(name, age):
     conn.close()
 
 
+@allure.step("Run 'update_user' method")
 def update_user(user_id, name, age):
     conn = connect_to_db()
     cursor = conn.cursor()
@@ -42,6 +46,7 @@ def update_user(user_id, name, age):
     conn.close()
 
 
+@allure.step("Run 'delete_user' method")
 def delete_user(user_id):
     conn = connect_to_db()
     cursor = conn.cursor()
