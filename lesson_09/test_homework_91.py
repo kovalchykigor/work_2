@@ -1,7 +1,7 @@
 import unittest
-from work_2.lesson_09.homework_91 import count_unique_characters
-from work_2.lesson_09.homework_91 import count_uppercase_starting_words
-from work_2.lesson_09.homework_91 import extract_strings
+from .homework_91 import count_unique_characters
+from .homework_91 import count_uppercase_starting_words
+from .homework_91 import extract_strings
 
 
 class TestCountUniqueCharacters(unittest.TestCase):

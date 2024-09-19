@@ -1,7 +1,7 @@
 import pytest
 import logging
 from unittest.mock import patch
-from homework_10 import log_event
+from .homework_10 import log_event
 
 
 class MockLogger:

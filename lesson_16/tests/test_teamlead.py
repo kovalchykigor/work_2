@@ -1,4 +1,4 @@
-from work_2.lesson_16.home_work_16_1 import TeamLead
+from ..home_work_16_1 import TeamLead
 
 def test_teamlead_class_atributes():
     team_lead = TeamLead("Igor", 600, "IT", "Python", 7)
