@@ -1,17 +1,15 @@
+import allure
 from . import base_app
-
 
 def test_connection():
     conn = base_app.connect_to_db()
     assert conn is not None, "Failed to connect to the database"
-
 
 def test_insert_user():
     base_app.create_table()
     base_app.insert_user('John', 30)
     users = base_app.fetch_users()
     assert any(user[1] == 'John' for user in users), "Failed to insert user"
-
 
 def test_update_user():
     base_app.insert_user('Jane', 25)
