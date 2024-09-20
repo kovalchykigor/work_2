@@ -1,6 +1,6 @@
 import pytest, requests
 
-from logger import logger
+from .logger import logger
 base_url = "http://127.0.0.1:8080/"
 
 
