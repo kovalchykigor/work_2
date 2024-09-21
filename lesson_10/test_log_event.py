@@ -18,6 +18,7 @@ class MockLogger:
         self.messages['error'].append(message)
 
 
+@pytest.mark.success
 def test_log_event_success():
     mock_logger = MockLogger()
 
@@ -29,6 +30,7 @@ def test_log_event_success():
     assert mock_logger.messages['error'] == []
 
 
+@pytest.mark.success
 def test_log_event_expired():
     mock_logger = MockLogger()
 
@@ -40,6 +42,7 @@ def test_log_event_expired():
     assert mock_logger.messages['error'] == []
 
 
+@pytest.mark.success
 def test_log_event_failed():
     mock_logger = MockLogger()
 
@@ -51,6 +54,7 @@ def test_log_event_failed():
     assert mock_logger.messages['error'] == ['Login event - Username: test_user, Status: failed']
 
 
+@pytest.mark.success
 def test_log_event_invalid_status():
     mock_logger = MockLogger()
 

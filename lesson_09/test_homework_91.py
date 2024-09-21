@@ -1,9 +1,13 @@
 import unittest
+
+import pytest
+
 from .homework_91 import count_unique_characters
 from .homework_91 import count_uppercase_starting_words
 from .homework_91 import extract_strings
 
 
+@pytest.mark.success
 class TestCountUniqueCharacters(unittest.TestCase):
     def test_empty_string(self):
         self.assertEqual(count_unique_characters(''), (0, False))
@@ -22,6 +26,7 @@ class TestCountUniqueCharacters(unittest.TestCase):
         self.assertEqual(count_unique_characters('a!@#a!@#b$%^&'), (9, False))
 
 
+@pytest.mark.success
 class TestCountUppercaseStartingWords(unittest.TestCase):
     def test_empty_string(self):
         self.assertEqual(count_uppercase_starting_words(''), 0)
@@ -39,6 +44,7 @@ class TestCountUppercaseStartingWords(unittest.TestCase):
         self.assertEqual(count_uppercase_starting_words('This is a Test, and This is another Test!'), 4)
 
 
+@pytest.mark.success
 class TestExtractStrings(unittest.TestCase):
     def test_mixed_list(self):
         self.assertEqual(extract_strings(['1', '2', 3, True, 'False', 5, '6', 7, 8, 'Python', 9, 0, 'Lorem Ipsum']),

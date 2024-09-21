@@ -1,5 +1,8 @@
 from ..home_work_16_1 import TeamLead
+import pytest
 
+
+@pytest.mark.success
 def test_teamlead_class_atributes():
     team_lead = TeamLead("Igor", 600, "IT", "Python", 7)
 
