@@ -32,11 +32,21 @@ pipeline {
                 '''
             }
         }
-
     }
     post {
         always {
             allure includeProperties: false, jdk: '', reportBuildPolicy: 'ALWAYS', properties: [], results: [[path: 'allure-results']]
+            withCredentials([usernamePassword(credentialsId: 'jenkins', usernameVariable: 'SMTP_USER', passwordVariable: 'SMTP_PASS')]) {
+                emailext (
+                    to: 'kovalchykigor@gmail.com',
+                    subject: "Build Status: ${currentBuild.fullDisplayName}",
+                    body: """<p>Build status: ${currentBuild.currentResult}</p>
+                    <p>Build URL: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>""",
+                    mimeType: 'text/html',
+                    from: "${SMTP_USER}"
+                )
+
+            }
         }
     }
 }
